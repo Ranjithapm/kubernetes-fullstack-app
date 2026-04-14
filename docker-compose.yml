@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  weather-backend-service:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    networks:
+      - weather-network
+    restart: unless-stopped
+
+  weather-frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "30080:80"
+    depends_on:
+      - weather-backend-service
+    networks:
+      - weather-network
+    restart: unless-stopped
+
+networks:
+  weather-network:
+    driver: bridge
