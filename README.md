@@ -27,6 +27,11 @@ k8s/
 ### 2. Deploy to Kubernetes
 ### 3. Access Application
 
+## 🐳 Docker
+- Created Dockerfiles for frontend and backend
+- Built images using docker build
+- Used containers for deployment
+
 Then open:
 http://localhost:3000
 
